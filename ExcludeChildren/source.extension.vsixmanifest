@@ -4,6 +4,7 @@
     <Identity Id="5b519baf-2408-4377-a492-c19acadab19f" Version="1.0" Language="en-US" Publisher="Clint Parker" />
     <DisplayName>Exclude Children</DisplayName>
     <Description xml:space="preserve">This allows you to exclude only visible children from directory selection in solution explorer</Description>
+    <License>Resources\LICENSE</License>
     <Icon>Resources\Icon.png</Icon>
     <PreviewImage>Resources\Preview.png</PreviewImage>
     <Tags>exclude, solution, solution exlporer</Tags>
