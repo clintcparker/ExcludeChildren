@@ -10,13 +10,13 @@ or get the [CI build](http://vsixgallery.com/extension/5b519baf-2408-4377-a492-c
 
 ---------------------------------------
 
-This allows you to exclude only visible children from directory selection in solution explorer
+More powerful than the default "Exclude From Project" command. Now you can exclude children of the selected directories from the project based on the filter in the solution explorer.
 
 See the [changelog](CHANGELOG.md) for changes and roadmap.
 
 ## Features
 
-- Excludes visble child items only from directory
+- Excludes filtered child items only from the selected directories
 
 
 ## Contribute
