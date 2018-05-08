@@ -1,16 +1,16 @@
-image: Visual Studio 2015
+version: 1.0.{build}
 
 install:
-- ps: (new-object Net.WebClient).DownloadString("https://raw.github.com/madskristensen/ExtensionScripts/master/AppVeyor/vsix.ps1") | iex
+  - ps: Start-FileDownload https://raw.githubusercontent.com/madskristensen/ExtensionScripts/master/AppVeyor/vsix.ps1
+  - ps: Import-Module './vsix.ps1'
 
 before_build:
-  - nuget restore -Verbosity quiet
   - ps: Vsix-IncrementVsixVersion | Vsix-UpdateBuildVersion
-  #- ps: Vsix-TokenReplacement ExcludeChildren\source.extension.cs 'Version = "([0-9\\.]+)"' 'Version = "{version}"'
 
 build_script:
-  - nuget restore -Verbosity quiet
   - msbuild /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
 
-after_test:
-  - ps: Vsix-PushArtifacts | Vsix-PublishToGallery
+after_build:
+  - ps: Vsix-PushArtifacts
+
+test: off
